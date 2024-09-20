@@ -1,5 +1,4 @@
 const Doctor = require('../models/docterModel');
-const User = require('../models/userModel');
 
 exports.setSlots = async (req, res) => {
     if (req.cookies.doctorId === undefined) {

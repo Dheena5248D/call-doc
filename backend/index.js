@@ -9,6 +9,8 @@ const dotenv = require('dotenv');
 dotenv.config();
 const authRoutes = require('./routes/authroutes');
 const docRoutes = require('./routes/docRoutes');
+const userRoutes = require('./routes/userRoutes');
+
 
 app.use(express.json());
 
@@ -25,3 +27,4 @@ app.listen(port,()=>{console.log("server started on", port)})
 
 app.use('/api', authRoutes);
 app.use('/api', docRoutes);
+app.use('/api', userRoutes);

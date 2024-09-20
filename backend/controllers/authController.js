@@ -58,5 +58,10 @@ exports.loginUser = async (req,res)=>{
     if(user.password != req.body.password){
         res.status(404).json({message:"password is wrong"})
     }
+    res.cookie('userId', user._id.toString(), { 
+        maxAge: 900000000,  
+        httpOnly: true,
+        sameSite: 'strict'
+    })
     res.status(200).json(user);
 }
